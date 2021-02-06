@@ -64,9 +64,15 @@ html .submenu{
 				background-color: #eee;
 			}
 
-			&:not(.active):hover{
-				background-color: rgb(245, 245, 245);
-				cursor: pointer;
+			&:not(.active){
+				&:hover, &:focus{
+					background-color: rgb(245, 245, 245);
+					cursor: pointer;
+				}
+
+				&:focus{
+					text-decoration: underline;
+				}
 			}
 
 			&:before{
