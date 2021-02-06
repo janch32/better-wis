@@ -1,0 +1,43 @@
+/**
+ * Tabulky na stránce (ty s původně sytě modrým záhlavím)
+ */
+
+@import "constants";
+
+html{
+	table.stbl{
+		border: none;
+
+		tbody, thead{
+			tr{
+				th{
+					background-color: darken($fitRegular, 20%);
+					height: 48px;
+					font-weight: 500;
+				}
+
+				td{
+					background-color: #111;
+					height: 48px;
+				}
+
+				th, td{
+					padding: 4px 24px;
+					border: none;
+
+					&:first-child{
+						padding-left: 48px;
+					}
+
+					&:last-child{
+						padding-right: 48px;
+					}
+				}
+
+				&:nth-of-type(even) td{
+					background-color: #222;
+				}
+			}
+		}
+	}
+}

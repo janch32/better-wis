@@ -1,0 +1,108 @@
+/**
+ * Velké hlavní tlačítka (takový ty zakulacený modrý)
+ */
+
+@import "constants";
+
+ul.sbb{
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content;
+	justify-content: center;
+	grid-gap: 16px;
+	margin: 0;
+	width: 100%;
+	padding: 0;
+	padding-top: 32px;
+
+	@media (max-width: 940px) {
+		grid-template-columns: max-content max-content max-content;
+	}
+
+	@media (max-width: 700px) {
+		grid-template-columns: max-content max-content;
+	}
+
+	li{
+		display: block;
+		position: relative;
+		width: 200px;
+		height: 200px;
+		text-align: center;
+
+		& > a{
+			background: #fff;
+			color: inherit;
+			border: 1px solid #ddd;
+			font-size: inherit;
+			font-weight: 500;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			border-radius: 4px;
+			box-shadow: none;
+			box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.1);
+			transition: 150ms all;
+
+			&.sbtng{ // Zvýrazněná položka
+				color: #fff;
+				background-color: $fitRegular;
+				border-color: darken($fitRegular, 10%);
+
+				&:hover, &:focus{
+					background-color: darken($fitRegular, 10%);
+					border-color: $fitDark;
+					color: #fff;
+				}
+
+				&:before{
+					filter: invert(100%);
+				}
+
+				& + div{
+					color: #fff;
+				}
+			}
+
+			&:hover, &:focus{
+				color: inherit;
+				background-color: lighten($fitLight, 20%);
+				border-color: $fitLight;
+			}
+
+			&:active{
+				transform: scale(0.95);
+			}
+
+			&:before{
+				display: block;
+				content: '';
+				//filter: invert(100%);
+				//filter: invert(50%) sepia(100%) hue-rotate(160deg) saturate(200%) brightness(120%);
+				width: 40px;
+				height: 40px;
+				margin: 8px auto;
+				margin-bottom: 16px;
+				transform-origin: top center;
+			}
+		}
+
+		& > div{
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			z-index: 1;
+			font-size: 12px;
+			opacity: 0.8;
+			width: 100%;
+			padding: 16px;
+			pointer-events: none;
+
+			*{
+				pointer-events: initial;
+			}
+		}
+	}
+
+}

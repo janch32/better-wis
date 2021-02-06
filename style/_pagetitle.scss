@@ -1,0 +1,29 @@
+/**
+ * Název webu + hodiny (hned pod menu)
+ */
+
+table[role=navigation] + table{
+	display: contents;
+	*{
+		display: contents;
+	}
+
+	#clock{
+		display: flex;
+		pointer-events: none;
+		position: sticky;
+		top: 0;
+		right: 0;
+		align-items: flex-end;
+		justify-content: flex-end;
+		padding-right: 32px;
+		z-index: 10000;
+		height: 32px;
+		margin-bottom: -32px;
+		color: #999;
+	}
+
+	h1{
+		display: none;
+	}
+}

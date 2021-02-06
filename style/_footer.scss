@@ -1,0 +1,20 @@
+/**
+ * Patička stránky
+ */
+
+body > div.noprint{
+	position: relative;
+	display: flex;
+	height: 80px;
+	z-index: 10;
+	background: #ddd;
+	color: #333;
+	border-top: 1px solid #ccc;
+
+	address{
+		margin: auto;
+		font: inherit;
+		font-size: 12px;
+		text-align: center;
+	}
+}

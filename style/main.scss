@@ -1,0 +1,77 @@
+@import "constants";
+@import "mainnav";
+@import "pagetitle";
+@import "footer";
+@import "bigButtons";
+//@import "table";
+@import "input";
+
+@import "submenu";
+
+*, *:before, *:after{
+	box-sizing: border-box !important;
+
+	&:focus{
+		outline: none;
+	}
+}
+
+body{
+	position: relative;
+	display: flex;
+	min-height: 100vh;
+	background-color: #eee;
+	flex-direction: column;
+
+	& > *{
+		flex-shrink: 0;
+	}
+
+	& > div[role=main]{
+		visibility: hidden;
+		border-bottom: none;
+		flex-grow: 1;
+		padding: 32px 16px;
+	}
+
+	&.loaded > div[role=main]{
+		visibility: visible;
+	}
+
+	// Odsadit obsah, aby nepřetékal do postranního menu
+	&:not(.nosubmenu) > div[role=main]{
+		margin-left: $subMenuWidth;
+		padding-left: 64px;
+	}
+}
+
+html{
+	// Systémové fonty
+	font-size: 16px;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial,
+				 sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+	body, td, th, iframe, .text{
+		color: black;
+	}
+
+	body, td, th, iframe, .text, p, li, input, textarea, select, button{
+		font: inherit;
+	}
+
+	p{
+		margin: 0;
+		padding-top: 1em;
+		padding-bottom: 1em;
+	}
+
+	a{
+		color: $fitDark;
+
+		&:focus{
+			color: $fitRegular;
+			outline: none;
+		}
+	}
+}
+

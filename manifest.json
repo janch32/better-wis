@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "Better WIS",
+	"version": "0.1",
+
+	"description": "Various quality of life fixes for VUT FIT IS",
+	"author": "Jan Chaloupka",
+
+	"permissions": [ "activeTab", "*://wis.fit.vutbr.cz/FIT/st/*" ],
+	"content_scripts": [
+		{
+			"matches": ["*://wis.fit.vutbr.cz/FIT/st/*"],
+			"css": [ "./out/main.css", "./out/icons.css" ],
+			"js": [ "./out/main.js" ],
+			"run_at": "document_start"
+		}
+	]
+}
